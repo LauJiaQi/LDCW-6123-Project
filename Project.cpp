@@ -88,6 +88,78 @@ int main() {
 
     std::string areaText, starterCourse, certificateHint;
 
+    switch (area) {
+        case 1:
+            areaText = "Data & Analytics";
+            starterCourse = "Intro to Data or Python for Everybody";
+            certificateHint = "Google Data Analytics (entry-level Professional Certificate)";
+            break;
+        case 2:
+            areaText = "IT Support & Cybersecurity";
+            starterCourse = "Technical Support Fundamentals";
+            certificateHint = "Google IT Support or IBM Cybersecurity Analyst";
+            break;
+        case 3:
+            areaText = "UX / Product / Design";
+            starterCourse = "Intro to UX Design";
+            certificateHint = "Google UX Design (entry-level Professional Certificate)";
+            break;
+        case 4:
+            areaText = "Business & Management";
+            starterCourse = "Foundations of Project Management";
+            certificateHint = "Google Project Management (entry-level Professional Certificate)";
+            break;
+        case 5:
+            areaText = "Language & Personal Development";
+            starterCourse = "Academic English or Communication Skills";
+            certificateHint = "Skill-focused Specializations (no single ‘career cert’ here)";
+            break;
+    }
+
+    // Recommendation output
+    std::cout << "\n--- Recommendation ---\n";
+    std::cout << "Area: " << areaText << "\n";
+
+    if (track == "free") {
+        std::cout << "Plan: Start by auditing a course such as \"" << starterCourse
+                  << "\" and commit " << hours << " hour(s)/week.\n";
+        std::cout << "Tip: You can upgrade later for graded assessments and certificates.\n";
+    } else if (track == "subscription") {
+        std::cout << "Plan: Use Coursera Plus to explore multiple courses/Specializations in "
+                  << areaText << ".\n";
+        if (hours >= 6) {
+            std::cout << "Economics: With steady study (" << hours
+                      << " hr/week), the annual plan (~$" << annualPlus
+                      << ") is usually better value than paying $" << monthlyPlus
+                      << "/month all year.\n";
+        } else {
+            std::cout << "Economics: If you study sporadically, the monthly plan ($"
+                      << monthlyPlus << "/month) may be sufficient.\n";
+        }
+    } else if (track == "certificate") {
+        std::cout << "Plan: Target a career pathway. A suitable option is: " << certificateHint << ".\n";
+        if (hours >= 8) {
+            std::cout << "Pace: At " << hours
+                      << " hr/week, expect consistent progress; consider a subscription if you also want electives.\n";
+        } else {
+            std::cout << "Pace: At " << hours
+                      << " hr/week, plan a longer timeline and focus on one course at a time.\n";
+        }
+    }
+
+    if (style == "video") {
+        std::cout << "Tip: Coursera video lectures are best suited for your learning style.\n";
+    } else if (style == "reading") {
+        std::cout << "Tip: Focus on text-based resources and readings in each course.\n";
+    } else if (style == "project") {
+        std::cout << "Tip: Choose courses with hands-on projects and capstones.\n";
+    }
+
+    std::cout << "\nGood luck with your learning journey!\n";
+
+    return 0;
+
+
 
 
 
