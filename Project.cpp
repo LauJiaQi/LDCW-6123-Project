@@ -40,5 +40,27 @@ int main() {
 
     std::cin.ignore(); // clear newline before getline
 
+    // Question 3: Goal type (free / subscription / certificate)
+    std::string track;
+    while (true) {
+        std::cout << "\nGoal type (f=free | s=subscription | c=certificate): ";
+        std::getline(std::cin, track);
+        std::transform(track.begin(), track.end(), track.begin(), ::tolower);
+
+        if (track == "f" || track == "free") {
+            track = "free";
+            break;
+        } else if (track == "s" || track == "subscription") {
+            track = "subscription";
+            break;
+        } else if (track == "c" || track == "certificate") {
+            track = "certificate";
+            break;
+        } else {
+            std::cout << "Invalid input. Please enter f, s, c or full text.\n";
+        }
+    }
+
+
 
     
