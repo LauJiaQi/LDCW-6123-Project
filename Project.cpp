@@ -61,6 +61,34 @@ int main() {
         }
     }
 
+    // Question 4: Preferred learning style
+    std::string style;
+    while (true) {
+        std::cout << "\nPreferred learning style (v=video | r=reading | p=project): ";
+        std::getline(std::cin, style);
+        std::transform(style.begin(), style.end(), style.begin(), ::tolower);
+
+        if (style == "v" || style == "video") {
+            style = "video";
+            break;
+        } else if (style == "r" || style == "reading") {
+            style = "reading";
+            break;
+        } else if (style == "p" || style == "project") {
+            style = "project";
+            break;
+        } else {
+            std::cout << "Invalid input. Please enter v, r, p or full text.\n";
+        }
+    }
+
+    // Pricing references (USD)
+    const double monthlyPlus = 59.0;
+    const double annualPlus  = 399.0;
+
+    std::string areaText, starterCourse, certificateHint;
+
+
 
 
     
