@@ -25,5 +25,20 @@ int main() {
         }
     }
 
+    // Question 2: Hours per week
+    int hours;
+    while (true) {
+        std::cout << "\nHours you can study per week (e.g., 3, 5, 10): ";
+        if (std::cin >> hours && hours > 0) {
+            break; // valid input
+        } else {
+            std::cout << "Invalid input. Enter a positive number.\n";
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+        }
+    }
+
+    std::cin.ignore(); // clear newline before getline
+
 
     
